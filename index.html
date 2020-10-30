@@ -1,0 +1,83 @@
+<!--Author: Kerry O'Neill
+Email address: kerry_oneill@student.uml.edu
+Class: 91.61 GUI Programming I
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!--all code for outside resources for css file, bootstrap-->
+  <meta charset="utf-8">
+  <title> HW 5 </title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="js/myscript.js"></script>
+
+
+  <!--header code, i used a jumbotron and used a gradient background-->
+  <div class="header">
+    <div style="background: linear-gradient(to top, #cc99ff 0%, #cc6699 100%);" class="jumbotron text-center" >
+      <h1> Dynamic Multiplication Table</h1>
+    </div>
+  </div>
+
+</head>
+
+<!--beginning of body-->
+<body>
+  <div class="container">
+
+    <!--makes grey background for jumbotron for the instructions for website-->
+    <div style="background: #DCDCDC;" class="jumbotron text-center" >
+      <h3>Enter in four numbers below for the numbers of row and columns you would like for the table.</h3>
+    </div>
+
+    <!--beginning of big container -->
+    <div class="container">
+      <!--start of row 1 for inputs-->
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="min_col">Min Column Number</label>
+          <input type="number" class="form-control" id="min_col" min="-50" max="50"/>
+        </div>
+        <!--second prompt for row 1-->
+        <div class="form-group col-md-6">
+          <label for="max_col">Max Column Number</label>
+          <input type="number" class="form-control" id="max_col" min="-50" max="50"/>
+        </div>
+      </div>
+
+      <!--second row of prompts-->
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="min_row">Min Row Number</label>
+          <input type="number"class="form-control" id="min_row" min="-50" max="50"/>
+        </div>
+
+        <!--second row second prompt-->
+        <div class="form-group col-md-6">
+          <label for="max_row">Max Row Number</label>
+          <input type="number" class="form-control" id="max_row" min="-50" max="50"/>
+        </div>
+
+
+        <!--i made this container for my submit button, and then my text-danger which returns the little red warning.-->
+        <!--https://getbootstrap.com/docs/4.1/utilities/colors/ is the link i used to learn about the text-danger/warning-->
+        <div class="container">
+          <p> <button type="button" class="btn btn-info btn-block" onclick="return input_and_table();">Submit</button>
+            <p class= "text-danger" id = "warning"></p>
+          </div>
+
+          <!--this is where the container is made for the mult_table, just made it down here because it comes after everything-->
+          <div class="container">
+            <table id="mult_table"></table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
